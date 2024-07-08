@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="LSLanguagePhpExtention.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ExportLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="DefaultClass" Type="System.String" Scope="User">
+      <Value Profile="(Default)">class Language\r\n{\r\n\r\n     const base_language = Languages::{langKey};\r\n\r\n   {translationAll}    public function __construct(Languages $lang = Languages::{langKey})\r\n    {\r\n        Session::delete(\"Language\");\r\n        Session::set(\"Language\", $lang);\r\n        $this-&gt;loadLanguage($lang-&gt;value);\r\n    }\r\n\r\n    private function loadLanguage($langPos)\r\n    {\r\n        $jsonData = file_get_contents(GetDocumentRoot() . '/libs/languages/' . $langPos . '.json');\r\n        $data = json_decode($jsonData, true)[0];\r\n        foreach ($data as $key =&gt; $value) {\r\n            self::$$key = $value;\r\n        }\r\n    }\r\n\r\n    public static function GetLanguage()\r\n    {\r\n        return !empty( Session::get(\"Language\")) ? Session::get(\"Language\"): self::base_language;\r\n    }\r\n\r\n}</Value>
+    </Setting>
+    <Setting Name="DefaultTranslation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">public static ${dictKey} = \"\";\r\n\r\n</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
