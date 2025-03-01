@@ -15,8 +15,8 @@ namespace LSLanguagePhpExtention.Forms
         public StandardClassEditor()
         {
 
-            FormText = "Standard Sets";
-           MinimizeBox = false;
+            // FormText = "Standard Sets"; - at the newer version of LSForm, this is not needed anymore
+            MinimizeBox = false;
 
             InitializeComponent();
         }

@@ -67,14 +67,14 @@ namespace LSLanguagePhpExtention
         {
             File.WriteAllText(Properties.Settings.Default.ExportLocation, buildedClass);
 
-            ProjectForm.SetLastProcessLabel(string.Format("Code exported to {0}", Properties.Settings.Default.ExportLocation));
+            //ProjectForm.SetLastProcessLabel(string.Format("Code exported to {0}", Properties.Settings.Default.ExportLocation));
         }
 
         private void CopyToClipboard(string text)
         {
             MessageBox.Show("Code copied to clipboard", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Clipboard.SetText(text);
-            ProjectForm.SetLastProcessLabel("Code copied to clipboard");
+          //  ProjectForm.SetLastProcessLabel("Code copied to clipboard");
         }
 
         private void ShowEditorMI_Click(object sender, EventArgs e)
